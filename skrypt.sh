@@ -19,7 +19,10 @@ case $1 in
     echo "--logs / -l [n]    : tworzy n plików logX.txt (domyślnie 100)"
     echo "--help / -h        : wyświetla listę dostępnych opcji"
     ;;
-
+ --init)
+    git clone https://github.com/kongagg2304/LAB4.git
+    export PATH="$PATH:$(pwd)/LAB4"
+    ;;
   *)
     echo "Nieznana opcja. Użyj --help lub -h, aby zobaczyć dostępne flagi."
     ;;
