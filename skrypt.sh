@@ -7,7 +7,8 @@ case $1 in
 esac 
 
 --logs)
-    for i in {1..100}
+    count=${2:-100}
+    for ((i=1;i<=count;i++))
     do
       echo -e "log$i.txt\nskrypt.sh\n$(date)" > "log$i.txt"
     done
