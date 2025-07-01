@@ -27,3 +27,11 @@ case $1 in
     echo "Nieznana opcja. Użyj --help lub -h, aby zobaczyć dostępne flagi."
     ;;
 esac
+ --error|-e)
+    count=${2:-100}
+    for ((i=1;i<=count;i++))
+    do
+      mkdir -p "error$i"
+      echo -e "error$i.txt\nskrypt.sh\n$(date)" > "error$i/error$i.txt"
+    done
+    ;;
