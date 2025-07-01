@@ -1,21 +1,26 @@
 #!/bin/bash
 
 case $1 in
-  --date)
+  --date|-d)
     date
     ;;
-esac 
-
---logs)
+  
+  --logs|-l)
     count=${2:-100}
-    for ((i=1;i<=count;i++))
-    do
-      echo -e "log$i.txt\nskrypt.sh\n$(date)" > "log$i.txt"
+    for ((i=1; i<=count; i++)); do
+      filename="log$i.txt"
+      echo -e "$filename\nskrypt.sh\n$(date)" > "$filename"
     done
     ;;
---help)
+
+  --help|-h)
     echo "Dostępne opcje:"
-    echo "--date         : wyświetla datę"
-    echo "--logs [n]     : tworzy pliki logX.txt"
-    echo "--help         : wyświetla tę pomoc"
+    echo "--date / -d        : wyświetla dzisiejszą datę"
+    echo "--logs / -l [n]    : tworzy n plików logX.txt (domyślnie 100)"
+    echo "--help / -h        : wyświetla listę dostępnych opcji"
     ;;
+
+  *)
+    echo "Nieznana opcja. Użyj --help lub -h, aby zobaczyć dostępne flagi."
+    ;;
+esac
