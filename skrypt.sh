@@ -13,3 +13,9 @@ esac
       echo -e "log$i.txt\nskrypt.sh\n$(date)" > "log$i.txt"
     done
     ;;
+--help)
+    echo "Dostępne opcje:"
+    echo "--date         : wyświetla datę"
+    echo "--logs [n]     : tworzy pliki logX.txt"
+    echo "--help         : wyświetla tę pomoc"
+    ;;
